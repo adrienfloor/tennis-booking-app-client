@@ -1,0 +1,169 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none !important;
+}
+
+input,
+textarea,
+select {
+  outline: none;
+  border: none;
+  padding-left: 5px;
+}
+
+/* GENERAL USAGE */
+
+.error-message {
+  font-weight: 600;
+  color: #FF6F61;
+}
+
+/* CALENDAR */
+
+.date-picker-row {
+  /* background-color: #FFF; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 60px;
+  margin-bottom: 20px
+}
+
+.select-date-title {
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.my-booking-cell:hover {
+  cursor: pointer;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* MATERIAL UI DATE PICKER */
+
+.css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+  background-color: #F0F0F0;
+  border-radius: 3px;
+}
+
+/* REACT DATE RANGE PICKER */
+.rdrDefinedRangesWrapper {
+  display: none;
+}
+
+/* MATERIAL UI DIALOG MODAL */
+
+.MuiDialog-paperWidthSm {
+	/* max-width: 1000px !important; */
+	/* width: 1200px !important; */
+  width: 100% !important;
+	height: 100%;
+}
+
+.css-1t1j96h-MuiPaper-root-MuiDialog-paper {
+  max-width: 80% !important;
+}
+
+.dialog-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialog-close-button {
+  width: 98%;
+  padding: 2%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.dialog-close-button:hover {
+  cursor: pointer;
+}
+
+/* MATERIAL UI TABLE */
+
+.css-dsuxgy-MuiTableCell-root {
+  position: sticky;
+  left: 0;
+  background-color: #C2C2C2;
+  font-weight: 500;
+}
+
+.css-5xela4-MuiPaper-root-MuiCard-root {
+  /* background-color: #2D2C2C; */
+  /* opacity: 0.9; */
+  /* box-shadow: 2px 2px 8px 2px rgba(255,255,255,0.3);
+  transition: 0.3s; */
+  border-radius: 5px;
+}
+
+/* .css-5xela4-MuiPaper-root-MuiCard-root:hover {
+  box-shadow: 2px 4px 10px 2px rgba(255,255,255,0.3);
+  box-shadow: 2px 2px 8px 2px rgba(255,255,255,0.3);
+} */
+
+.mobile-only,
+.tablet-only {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* html {
+    color-scheme: dark;
+  } */
+  body {
+    color: white;
+    /* background: black; */
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
+    /* color: black;
+    background: white; */
+  }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 650px) {
+  .tablet-only {
+    display: flex !important;
+  }
+  .desktop-only {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .MuiDialog-paperWidthSm {
+    width: 100% !important;
+    height: 80% !important;
+  }
+  .MuiDialog-paperScrollPaper {
+    max-height: 100% !important;
+  }
+  .mobile-only {
+    display: block;
+  }
+  .desktop-only {
+    display: none;
+  }
+}

@@ -1,0 +1,97 @@
+export const courtNamesReferences = {
+  1: 'N°01 Quick',
+  2: 'N°02 Quick',
+  3: 'N°03 Quick',
+  4: 'N°04 Quick',
+  5: 'N°05 Quick',
+  6: 'N°06 Green',
+  7: 'N°07 Green',
+  8: 'N°08 Green',
+  9: 'N°09 Green',
+  10: 'N°10 Green',
+  11: 'N°11 Green',
+  12: 'N°12 Green',
+  13: 'N°13 Green',
+  14: 'N°14 Green Couvert',
+  15: 'N°15 Green Couvert',
+  16: 'N°16 Green Couvert',
+  17: 'N°17 Green Couvert'
+}
+
+export const courtsNames = [
+  '',
+  'N°01 Quick',
+  'N°02 Quick',
+  'N°03 Quick',
+  'N°04 Quick',
+  'N°05 Quick',
+  'N°06 Green',
+  'N°07 Green',
+  'N°08 Green',
+  'N°09 Green',
+  'N°10 Green',
+  'N°11 Green',
+  'N°12 Green',
+  'N°13 Green',
+  'N°14 Green Couvert',
+  'N°15 Green Couvert',
+  'N°16 Green Couvert',
+  'N°17 Green Couvert'
+]
+
+export const rowsReferences = [
+  'one',
+  'two',
+  'three',
+  'four',
+  'five',
+  'six',
+  'seven',
+  'eight',
+  'nine',
+  'ten',
+  'eleven',
+  'twelve',
+  'thirteen',
+  'fourteen',
+  'fifteen',
+  'sixteen',
+  'seventeen'
+]
+
+export const courtNamesToNumber = {
+  'N°01 Quick': 1,
+  'N°02 Quick': 2,
+  'N°03 Quick': 3,
+  'N°04 Quick': 4,
+  'N°05 Quick': 5,
+  'N°06 Green': 6,
+  'N°07 Green': 7,
+  'N°08 Green': 8,
+  'N°09 Green': 9,
+  'N°10 Green': 10,
+  'N°11 Green': 11,
+  'N°12 Green': 12,
+  'N°13 Green': 13,
+  'N°14 Green Couvert': 14,
+  'N°15 Green Couvert': 15,
+  'N°16 Green Couvert': 16,
+  'N°17 Green Couvert': 17
+}
+
+export const bookingHours = [
+  '08:00-09:00',
+  '09:00-10:00',
+  '10:00-11:00',
+  '11:00-12:00',
+  '12:00-13:00',
+  '13:00-14:00',
+  '14:00-15:00',
+  '15:00-16:00',
+  '16:00-17:00',
+  '17:00-18:00',
+  '18:00-19:00',
+  '19:00-20:00',
+  '20:00-21:00',
+  '21:00-22:00',
+]
