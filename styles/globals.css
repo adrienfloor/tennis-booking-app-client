@@ -130,6 +130,10 @@ select {
   display: none;
 }
 
+.desktop-only {
+  display: flex;
+}
+
 @media (prefers-color-scheme: dark) {
   /* html {
     color-scheme: dark;
@@ -161,7 +165,7 @@ select {
     max-height: 100% !important;
   }
   .mobile-only {
-    display: block;
+    display: flex;
   }
   .desktop-only {
     display: none;

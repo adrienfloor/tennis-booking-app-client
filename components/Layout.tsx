@@ -34,7 +34,7 @@ const Layout = ({ children }: { children: ReactNode }): ReactElement => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.header}>
-        <div className='desktop-only'>
+        <div className='desktop-only' style={{ width: '100%', justifyContent: 'space-between' }}>
           <Link href='/'>
             <span className={styles.titleHeader}>
               TENNIS RENÉ MAGNAC 🎾
@@ -88,10 +88,13 @@ const Layout = ({ children }: { children: ReactNode }): ReactElement => {
             </div>
           }
         </div>
-        <div className='mobile-only tablet-only' style={{ display: 'flex' }} >
-          <MobileMenu isAdmin={user.isAdmin} onLogout={() => handleLogout()} />
+        <div className='mobile-only tablet-only'>
+          {
+            isAutenticated &&
+            <MobileMenu isAdmin={user.isAdmin} onLogout={() => handleLogout()} />
+          }
           <Link href='/'>
-            <span className={styles.titleHeader}>
+            <span className={styles.titleHeader} style={ !isAutenticated ? { marginLeft: '10px'} : {}}>
               TENNIS RENÉ MAGNAC 🎾
             </span>
           </Link>
