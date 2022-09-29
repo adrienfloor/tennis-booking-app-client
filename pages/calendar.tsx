@@ -237,7 +237,7 @@ export default function Calendar({ onCellClick, onBookingUpdate }: any) {
               onChange={(date: any) => handleDateChange(date)}
               renderInput={(params: any) => <TextField {...params} />}
               minDate={new Date()}
-              maxDate={!user.isAdmin ? dateInTwoMonths(new Date()) : dateInTwoDays(new Date()) }
+              maxDate={user.isAdmin ? dateInTwoMonths(new Date()) : dateInTwoDays(new Date()) }
             />
           </LocalizationProvider>
         </div>
