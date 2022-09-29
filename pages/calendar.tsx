@@ -210,16 +210,18 @@ export default function Calendar({ onCellClick, onBookingUpdate }: any) {
     <div>
       <div className='date-picker-row'>
        <span className='select-date-title'>Sélectionner une date : </span>
-        <LocalizationProvider dateAdapter={AdapterDateFns} locale={frLocale}>
-          <DesktopDatePicker
-            // label="Choisir une date"
-            inputFormat="dd/MM/yyyy"
-            value={date}
-            onChange={(date: any) => handleDateChange(date)}
-            renderInput={(params: any) => <TextField {...params} />}
-            minDate={new Date()}
-          />
-        </LocalizationProvider>
+       <div style={{ backgroundColor: '#F0F0F0', borderRadius: '3px' }}>
+          <LocalizationProvider dateAdapter={AdapterDateFns} locale={frLocale}>
+            <DesktopDatePicker
+              // label="Choisir une date"
+              inputFormat="dd/MM/yyyy"
+              value={date}
+              onChange={(date: any) => handleDateChange(date)}
+              renderInput={(params: any) => <TextField {...params} />}
+              minDate={new Date()}
+            />
+          </LocalizationProvider>
+        </div>
       </div>
       <TableContainer
         sx={{ width: '100%', maxHeight: window.innerWidth < 1280 ? 550 : 700 }}

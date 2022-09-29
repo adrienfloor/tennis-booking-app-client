@@ -58,13 +58,6 @@ select {
   min-height: 100%;
 }
 
-/* MATERIAL UI DATE PICKER */
-
-.css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
-  background-color: #F0F0F0 !important;
-  border-radius: 3px;
-}
-
 /* REACT DATE RANGE PICKER */
 .rdrDefinedRangesWrapper {
   display: none;
@@ -105,7 +98,7 @@ select {
 
 /* MATERIAL UI TABLE */
 
-.css-dsuxgy-MuiTableCell-root {
+th {
   position: sticky;
   left: 0;
   background-color: #C2C2C2;
