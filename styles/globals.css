@@ -61,7 +61,7 @@ select {
 /* MATERIAL UI DATE PICKER */
 
 .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
-  background-color: #F0F0F0;
+  background-color: #F0F0F0 !important;
   border-radius: 3px;
 }
 
