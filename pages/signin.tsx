@@ -59,6 +59,8 @@ const Signin: NextPage = () => {
         }
       })
     } else {
+      console.log('signin failed')
+      setIsLoading(false)
       setErrorMessage('Ajoutez tous les champs')
       return
     }

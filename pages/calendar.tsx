@@ -14,10 +14,12 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker'
 import TextField from '@mui/material/TextField'
 import frLocale from 'date-fns/locale/fr'
+import { BallTriangle } from 'react-loader-spinner'
 
 import { BookingContext } from '../contexts/BookingContext'
 import { AuthContext } from '../contexts/AuthContext'
 import { courtsNames, rowsReferences } from '../fixtures'
+import { dateInTwoDays, dateInTwoMonths } from '../utils'
 
 function createData(
   emptyCell: null,
@@ -201,11 +203,27 @@ export default function Calendar({ onCellClick, onBookingUpdate }: any) {
   }
 
   if(isLoading) {
-    return(
-      <div></div>
+    return (
+      <div
+        style={{
+          width: '100%',
+          height: '300px',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}
+      >
+        <BallTriangle
+          height={100}
+          width={100}
+          radius={5}
+          color='#0070f3'
+          ariaLabel='ball-triangle-loading'
+          visible={true}
+        />
+      </div>
     )
   }
-
   return (
     <div>
       <div className='date-picker-row'>
@@ -219,6 +237,7 @@ export default function Calendar({ onCellClick, onBookingUpdate }: any) {
               onChange={(date: any) => handleDateChange(date)}
               renderInput={(params: any) => <TextField {...params} />}
               minDate={new Date()}
+              maxDate={!user.isAdmin ? dateInTwoMonths(new Date()) : dateInTwoDays(new Date()) }
             />
           </LocalizationProvider>
         </div>

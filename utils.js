@@ -41,6 +41,16 @@ export const dateInOneMonth = date => {
   return dateInOneMOnth
 }
 
+export const dateInTwoMonths = date => {
+  const dateInTwoMOnths = new Date(date.setMonth(date.getMonth()+2))
+  return dateInTwoMOnths
+}
+
+export const dateInTwoDays = date => {
+  const dateInTwoDays = date.setDate(date.getDate() + 2)
+  return dateInTwoDays
+}
+
 export const getDatesInRange = (startDate, endDate) => {
   const date = new Date(startDate.getTime())
   const dates = []
