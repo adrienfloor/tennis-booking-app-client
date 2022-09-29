@@ -5,6 +5,11 @@ import { BallTriangle } from 'react-loader-spinner'
 
 import styles from '../styles/Home.module.css'
 import { AuthContext } from '../contexts/AuthContext'
+import {
+  isValidEmailInput,
+  isValidPhoneNumber,
+  isValidDate
+} from '../utils'
 
 const Signup: NextPage = ({ onClose, onNewUserCreated }: any) => {
 
@@ -38,40 +43,72 @@ const Signup: NextPage = ({ onClose, onNewUserCreated }: any) => {
   const handleSubmit = (e: React.FormEvent<EventTarget>) => {
     e.preventDefault()
     setIsLoading(true)
+
     if(
-      firstName?.length > 0 &&
-      lastName?.length > 0 &&
-      email?.length > 0 &&
-      phoneNumber?.length > 0 &&
-      birthdate?.length > 0
+      firstName?.length == 0 &&
+      lastName?.length == 0 &&
+      email?.length == 0 &&
+      phoneNumber?.length == 0 &&
+      birthdate?.length == 0
     ) {
-      signupUser(
-        firstName,
-        lastName,
-        email,
-        birthdate, // initial automatic password
-        phoneNumber,
-        birthdate
-      )
-      .then((res: any) => {
-        setFirstName('')
-        setLastName('')
-        setEmail('')
-        setBirthdate('')
-        setPhoneNumber('')
-        onNewUserCreated(res?.data)
-        onClose()
-        setIsLoading(false)
-      })
-      .catch((error: any) => {
-        console.log('Error : ', error)
-        setErrorMessage(error)
-        setIsLoading(false)
-      })
-    } else {
       setErrorMessage('Ajoutez tous les champs')
+      setTimeout(function () {
+        setErrorMessage('')
+      }, 3000)
+      setIsLoading(false)
       return
     }
+
+    if(!isValidEmailInput(email)) {
+      setErrorMessage('Format email incorrect')
+      setIsLoading(false)
+      setTimeout(function () {
+        setErrorMessage('')
+      }, 3000)
+      return
+    }
+
+    if(!isValidPhoneNumber(phoneNumber)) {
+      setErrorMessage('Format téléphone incorrect')
+      setIsLoading(false)
+      setTimeout(function () {
+        setErrorMessage('')
+      }, 3000)
+      return
+    }
+
+    if(!isValidDate(birthdate)) {
+      setErrorMessage('Date au format jj/mm/aaaa')
+      setIsLoading(false)
+      setTimeout(function () {
+        setErrorMessage('')
+      }, 3000)
+      return
+    }
+
+    signupUser(
+      firstName,
+      lastName,
+      email,
+      birthdate, // initial automatic password
+      phoneNumber,
+      birthdate
+    )
+    .then((res: any) => {
+      setFirstName('')
+      setLastName('')
+      setEmail('')
+      setBirthdate('')
+      setPhoneNumber('')
+      onNewUserCreated(res?.data)
+      onClose()
+      setIsLoading(false)
+    })
+    .catch((error: any) => {
+      console.log('Error : ', error)
+      setErrorMessage(error)
+      setIsLoading(false)
+    })
   }
 
   if(isLoading) {

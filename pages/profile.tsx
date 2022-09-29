@@ -11,7 +11,11 @@ import styles from '../styles/Home.module.css'
 import { AuthContext } from '../contexts/AuthContext'
 import { UsersContext } from '../contexts/UsersContext'
 import { ToastContext } from '../contexts/ToastContext'
-import { nbrOfDaysToThisDate } from '../utils'
+import {
+  isValidEmailInput,
+  nbrOfDaysToThisDate,
+  isValidPhoneNumber
+} from '../utils'
 
 const Profile = () => {
 
@@ -79,7 +83,7 @@ const Profile = () => {
         setErrorMessage(res.msg)
         setTimeout(function () {
           setErrorMessage('')
-        }, 3000)
+        }, 5000)
         return
       } else {
         loadUser(localStorage.getItem('token'))
@@ -96,6 +100,24 @@ const Profile = () => {
 
   const handleSubmitNewProfile = () => {
     setIsLoading(true)
+
+    if(!isValidEmailInput(newEmail)) {
+      setErrorMessage('Format email incorrect')
+      setIsLoading(false)
+      setTimeout(function () {
+        setErrorMessage('')
+      }, 3000)
+      return
+    }
+
+    if(!isValidPhoneNumber(newPhoneNumber)) {
+      setErrorMessage('Format téléphone incorrect')
+      setIsLoading(false)
+      setTimeout(function () {
+        setErrorMessage('')
+      }, 3000)
+      return
+    }
 
     updateUser({
       _id: user._id,

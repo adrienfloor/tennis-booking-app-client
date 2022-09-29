@@ -8,6 +8,10 @@ import UsersContextProvider from '../contexts/UsersContext'
 import BookingContextProvider from '../contexts/BookingContext'
 import ToastContextProvider from '../contexts/ToastContext'
 
+if (process.env.NEXT_PUBLIC_ENV === 'production') {
+  console.log = console.warn = console.error = () => { }
+}
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <AuthContextProvider>
